@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node esbuild.config.mjs",
-    "start": "node server.cjs"
+    "start": "npm run build && node server.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.84.0",
