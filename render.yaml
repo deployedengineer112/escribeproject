@@ -23,4 +23,4 @@ services:
     publishDir: dist
     envVars:
       - key: VITE_API_URL
-        sync: false
+        value: https://escribeprojectbackend.onrender.com
