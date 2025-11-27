@@ -51,6 +51,10 @@ function calcAge(iso: string | null | undefined): number {
   return Math.max(0, age)
 }
 
+api.get('/hello', (_req, res) => {
+  res.send('hello world')
+})
+
 api.get('/patients', async (req, res) => {
   try {
     const sb = getSupabase()
@@ -214,7 +218,7 @@ function verifyJwt(token: string): { sub: string; iat: number; exp: number } | n
 }
 
 api.use((req, res, next) => {
-  if (req.path === '/signin') return next()
+  if (req.path === '/signin' || req.path === '/hello') return next()
   const auth = req.headers.authorization || ''
   const token = auth.startsWith('Bearer ') ? auth.slice(7) : ''
   const payload = token ? verifyJwt(token) : null
