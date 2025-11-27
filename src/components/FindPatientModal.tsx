@@ -10,6 +10,7 @@ interface FindPatientModalProps {
 type Patient = { id: string, name: string, dob: string, provider: string, recording: 'complete' | 'start' | 'paused' | 'none' }
 
 export function FindPatientModal({ open, onClose, onCreateNew }: FindPatientModalProps) {
+  const API_BASE = import.meta.env.VITE_API_URL
   const [query, setQuery] = useState('')
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [allPatients, setAllPatients] = useState<Patient[]>([])
@@ -17,7 +18,7 @@ export function FindPatientModal({ open, onClose, onCreateNew }: FindPatientModa
   const [provider, setProvider] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/patients')
+    fetch(`${API_BASE}/api/patients`)
       .then(r => r.json())
       .then((list) => {
         const arr = list as { id: string, name: string, dob: string, provider: string, recording: 'complete' | 'start' | 'paused' | 'none' }[]
@@ -29,7 +30,7 @@ export function FindPatientModal({ open, onClose, onCreateNew }: FindPatientModa
 
   useEffect(() => {
     if (!open || !selectedId) return
-    fetch('http://localhost:3000/api/providers')
+    fetch(`${API_BASE}/api/providers`)
       .then(r => r.json())
       .then((list) => {
         const arr = list as string[]

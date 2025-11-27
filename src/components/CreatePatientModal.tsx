@@ -8,7 +8,7 @@ interface CreatePatientModalProps {
 }
 
 export function CreatePatientModal({ open, onClose, onSaved }: CreatePatientModalProps) {
-  const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000'
+  const API_BASE = import.meta.env.VITE_API_URL
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [dob, setDob] = useState('')

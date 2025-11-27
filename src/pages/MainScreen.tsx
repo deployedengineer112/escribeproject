@@ -14,7 +14,7 @@ import { SoapNotePanel } from '../components/SoapNotePanel'
 import { PatientOptionsSheet } from '../components/PatientOptionsSheet'
 
 export function MainScreen() {
-  const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000'
+  const API_BASE = import.meta.env.VITE_API_URL
   const [activeTab, setActiveTab] = useState('Dictation')
   const [noticeVisible, setNoticeVisible] = useState(false)
   const [noticeMessage, setNoticeMessage] = useState('')

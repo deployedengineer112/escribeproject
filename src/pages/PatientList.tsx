@@ -11,7 +11,7 @@ type PatientItem = { id: string, name: string, time: string, dob: string, age: n
 type OnSelectPatient = (p: { id: string, name: string, dob: string, age: number, provider: string }) => void
 
 export default function PatientList({ onSelect }: { onSelect?: OnSelectPatient }) {
-  const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3000'
+  const API_BASE = import.meta.env.VITE_API_URL
   const [patientList, setPatientList] = useState<PatientItem[]>([])
   const [statusFilter, setStatusFilter] = useState('All Statuses')
   const [listQuery, setListQuery] = useState('')
