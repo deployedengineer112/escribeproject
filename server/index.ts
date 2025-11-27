@@ -1,9 +1,4 @@
-import dotenv from 'dotenv'
-import { fileURLToPath } from 'url'
-import path from 'path'
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-dotenv.config({ path: path.join(__dirname, '.env') })
+import 'dotenv/config'
 import express from 'express'
 import type {} from 'express'
 import cors from 'cors'
@@ -23,7 +18,7 @@ app.use((req, _res, next) => {
   next()
 })
 
-import { api } from './routes/api.ts'
+import { api } from './routes/api'
 
 
 const port = process.env.PORT ? Number(process.env.PORT) : 3000

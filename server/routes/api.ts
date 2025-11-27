@@ -3,9 +3,9 @@ import { Router } from 'express'
 import { createClient } from '@supabase/supabase-js'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
-import { listProviders, listStatuses } from '../controllers/metaController.ts'
-import { signin } from '../controllers/authController.ts'
-import { getTranscript } from '../controllers/transcriptController.ts'
+import { listProviders, listStatuses } from '../controllers/metaController'
+import { signin } from '../controllers/authController'
+import { getTranscript } from '../controllers/transcriptController'
 import crypto from 'crypto'
 
 export const api = Router()

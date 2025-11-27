@@ -2,7 +2,7 @@ services:
   - type: web
     name: backend
     env: node
-    rootDir: backend
+    rootDir: server
     buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
@@ -18,7 +18,7 @@ services:
         sync: false
   - type: static_site
     name: frontend
-    rootDir: frontend
+    rootDir: .
     buildCommand: npm install && npm run build
     publishDir: dist
     envVars:

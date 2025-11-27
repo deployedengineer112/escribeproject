@@ -7,12 +7,12 @@ const __dirname = path.dirname(__filename)
 
 await build({
   entryPoints: [path.join(__dirname, './index.ts')],
-  outfile: path.join(__dirname, 'dist/server.js'),
+  outfile: path.join(__dirname, 'dist/server.cjs'),
   platform: 'node',
   bundle: true,
   minify: true,
   sourcemap: false,
-  format: 'esm',
+  format: 'cjs',
   target: ['node20'],
   external: [],
 })

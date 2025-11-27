@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "start": "npm --prefix server start",
     "server": "ts-node --esm server/index.ts",
     "tailwind:init": "@tailwindcss/cli init"
   },
